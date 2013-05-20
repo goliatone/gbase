@@ -1,0 +1,6 @@
+{
+  "src/name.js": "src/{%= name %}.js",
+  "test/spec/name-spec.js": "test/spec/{%= name %}-spec.js",
+  "name.sublime-project": "{%= name %}.sublime-project",
+  "name.sublime-workspace": "{%= name %}.sublime-workspace"
+}

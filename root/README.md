@@ -1,5 +1,7 @@
 # {%= title || name %}
 
+[![Build Status](https://secure.travis-ci.org/{%= author_name %}/{%= name %}.png)](http://travis-ci.org/{%= author_name %}/{%= name %})
+
 {%= description %}
 
 ## Getting Started

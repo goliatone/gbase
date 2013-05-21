@@ -50,6 +50,7 @@ exports.template = function(grunt, init, done) {
     // A few additional properties.
     props.packageName = 'package.json';
     props.dependencies = {require: props.requirejs || '~2.1.4'};
+    props.destpath = init.destpath();
 
     props.keywords = [];
 

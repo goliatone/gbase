@@ -1,4 +1,4 @@
-Add new module definition to support AMD, CommonJS, and window export.
+TODO: Add new module definition to support AMD, CommonJS, and window export.
 
 
 ```
@@ -25,3 +25,5 @@ Add new module definition to support AMD, CommonJS, and window export.
 
 }(this));
 ```
+
+TODO: Make bower components optional, use prompts. Have app and module mode?

@@ -7,6 +7,8 @@
   ],
   "dependencies": {
     "jquery": "~1.9.1",
-    "requirejs": "~2.1.4"
+    "requirejs": "~2.1.4",
+    "requirejs-text":"2.0.6",
+    "requirejs-domready":"2.0.1"
   }
 }

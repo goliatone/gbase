@@ -27,3 +27,5 @@ TODO: Add new module definition to support AMD, CommonJS, and window export.
 ```
 
 TODO: Make bower components optional, use prompts. Have app and module mode?
+
+TODO: Do we need/want https://github.com/SlexAxton/require-handlebars-plugin?

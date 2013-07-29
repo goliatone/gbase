@@ -86,7 +86,8 @@ exports.template = function(grunt, init, done) {
         'grunt-open': '~0.2.0',
         'matchdep': '~0.1.1',
         'grunt-google-cdn': '~0.1.1',
-        'markdown': '~0.4.0'
+        'markdown': '~0.4.0',
+        'grunt-bump': '~0.0.11'
       }
     });
 

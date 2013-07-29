@@ -1,5 +1,9 @@
+/*global basePath:true, exclude:true, reporters:true, files:true*/
+/*global port:true, runnerPort:true, colors:true, logLevel:true*/
+/*global autoWatch:true, browsers:true, captureTimeout:true, singleRun:true*/
+/*global JASMINE:true, JASMINE_ADAPTER:true, REQUIRE:true, REQUIRE_ADAPTER:true*/
+/*global LOG_INFO:true*/
 // Karma configuration
-// Generated on Sun Mar 31 2013 21:59:25 GMT+0200 (CEST)
 
 
 // base path, that will be used to resolve files and exclude

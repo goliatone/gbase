@@ -1,8 +1,5 @@
-/*global define:true*/
-/*global describe:true */
-/*global it:true */
-/*global expect:true */
-/*global beforeEach:true */
+/*global define:true, describe:true , it:true , expect:true, 
+beforeEach:true, sinon:true, spyOn:true , expect:true */
 /* jshint strict: false */
 define(['{%= name%}', 'jquery'], function({%= title%}, $) {
 

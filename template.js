@@ -42,9 +42,9 @@ exports.template = function(grunt, init, done) {
     init.prompt('homepage'),
     init.prompt('bugs'),
     init.prompt('licenses', 'MIT'),
-    init.prompt('author_name'),
-    init.prompt('author_email'),
-    init.prompt('author_url')
+    init.prompt('author_name', 'goliatone'),
+    init.prompt('author_email', 'hello@goliatone.com'),
+    init.prompt('author_url', 'http://goliatone.com')
     // init.prompt('requirejs')
   ], function(err, props) {
     // A few additional properties.

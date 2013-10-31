@@ -7,7 +7,7 @@ requirejs.config({
     baseUrl: '/base/src',
 
     paths: {
-        'jquery': '../libs/jquery/jquery'
+        'jquery': '../lib/jquery/jquery'
     },
 
     // ask Require.js to load these files (all our tests)

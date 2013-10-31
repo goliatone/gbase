@@ -61,9 +61,10 @@ exports.template = function(grunt, init, done) {
 		init.addLicenseFiles(files, props.licenses);
 
 		// Actually copy (and process) files.
-		init.copyAndProcess(files, props, {noProcess: 'libs/**'});
+		init.copyAndProcess(files, props, {noProcess: 'lib/**'});
 
 		// Generate package.json file, used by npm and grunt.
+		// TODO: Move into its own file!
 		init.writePackageJSON('package.json', {
 			name: 'jquery-plugin',
 			version: '0.0.0-ignored',

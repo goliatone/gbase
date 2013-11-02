@@ -83,12 +83,13 @@ exports.template = function(grunt, init, done) {
 				'grunt-contrib-livereload': '~0.1.2',
 				'grunt-bower-requirejs': '~0.4.1',
 				'grunt-regarde': '~0.1.1',
-				'grunt-karma': '~0.5.0',
+				"grunt-karma": "~0.7.1",
 				'grunt-open': '~0.2.0',
 				'matchdep': '~0.1.1',
 				'grunt-google-cdn': '~0.1.1',
 				'markdown': '~0.4.0',
-				'grunt-bump': '~0.0.11'
+				'grunt-bump': '~0.0.11',
+    			'phantomjs' : '1.9.1-0'
 			}
 		});
 

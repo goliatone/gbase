@@ -32,7 +32,7 @@
             return mod;
         };
     }
-}(this, {%= title%}, function() {
+}(this, "{%= title%}", function() {
 
     /**
      * Extend method.

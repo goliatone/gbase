@@ -84,6 +84,7 @@ exports.template = function(grunt, init, done) {
 				'grunt-bower-requirejs': '~0.4.1',
 				'grunt-regarde': '~0.1.1',
 				"grunt-karma": "~0.7.1",
+				"karma-coverage": "~0.1",
 				'grunt-open': '~0.2.0',
 				'matchdep': '~0.1.1',
 				'grunt-google-cdn': '~0.1.1',

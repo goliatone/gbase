@@ -1,6 +1,26 @@
 {
   "name": "{%= name %}",
-  "version": "0.1.0",
+  "version": "{%= version %}",
+  "description": "{%= description %}",
+  "homepage": "{%= homepage %}",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/{%= author_name %}/{%= repository %}.git"
+	},
+	 "bugs": {
+		"url": "https://github.com/{%= author_name %}/{%= repository %}/issues"
+	},
+	"author": {
+		"name": "{%= author_name %}",
+		"email": "{%= author_email %}",
+		"url": "{%= author_url %}"
+	},
+	"licenses": [
+		{
+			"type": "{%= licenses %}",
+			"url": "https://github.com/{%= author_name %}/{%= repository %}/blob/master/LICENSE-{%= licenses %}"
+		}
+	],
   "dependencies": {
     "jquery": "~1.9.1",
     "requirejs": "~2.1.4"

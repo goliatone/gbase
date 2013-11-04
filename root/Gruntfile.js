@@ -48,7 +48,8 @@ module.exports = function (grunt) {
                         return [
                             lrSnippet,
                             mountFolder(connect, '.tmp'),
-                            mountFolder(connect, yeomanConfig.src)
+                            mountFolder(connect, yeomanConfig.src),
+                            mountFolder(connect, yeomanConfig.example)
                         ];
                     }
                 }

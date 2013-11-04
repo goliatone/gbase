@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         name: '{%= name%}',
         src: 'src',
         dist: 'dist',
-        example:'example'
+        example:'examples'
     };
 
     try {

@@ -71,9 +71,11 @@ exports.template = function(grunt, init, done) {
 			npm_test: 'grunt karma:ci',
 			// TODO: pull from grunt's package.json
 			node_version: '>= 0.8.0',
+			peerDependencies:{
+				'grunt-cli': '~0.1'
+			},
 			devDependencies: {
-				'grunt': '~0.4',
-				'grunt-cli': '~0.1',
+				'grunt': '~0.4',				
 				'grunt-contrib-copy': '~0.4.0',
 				'grunt-contrib-concat': '~0.1.3',
 				'grunt-contrib-uglify': '~0.2.0',

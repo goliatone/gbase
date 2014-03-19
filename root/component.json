@@ -5,10 +5,10 @@
   "homepage": "{%= homepage %}",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/{%= author_name %}/{%= repository %}.git"
+		"url": "git://github.com/{%= author_name %}/{%= name %}.git"
 	},
 	 "bugs": {
-		"url": "https://github.com/{%= author_name %}/{%= repository %}/issues"
+		"url": "https://github.com/{%= author_name %}/{%= name %}/issues"
 	},
 	"author": {
 		"name": "{%= author_name %}",
@@ -18,7 +18,7 @@
 	"licenses": [
 		{
 			"type": "{%= licenses %}",
-			"url": "https://github.com/{%= author_name %}/{%= repository %}/blob/master/LICENSE-{%= licenses %}"
+			"url": "https://github.com/{%= author_name %}/{%= name %}/blob/master/LICENSE-{%= licenses %}"
 		}
 	],
   "dependencies": {

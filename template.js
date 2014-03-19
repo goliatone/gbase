@@ -63,39 +63,6 @@ exports.template = function(grunt, init, done) {
 		// Actually copy (and process) files.
 		init.copyAndProcess(files, props, {noProcess: 'lib/**'});
 
-		// Generate package.json file, used by npm and grunt.
-		// TODO: Move into its own file!
-		init.writePackageJSON('package.json', {
-			name: 'jquery-plugin',
-			version: '0.0.0-ignored',
-			npm_test: 'grunt karma:ci',
-			// TODO: pull from grunt's package.json
-			node_version: '>= 0.8.0',
-			peerDependencies:{
-				'grunt-cli': '~0.1'
-			},
-			devDependencies: {
-				'grunt': '~0.4',				
-				'grunt-contrib-copy': '~0.4.0',
-				'grunt-contrib-concat': '~0.1.3',
-				'grunt-contrib-uglify': '~0.2.0',
-				'grunt-contrib-jshint': '~0.3.0',
-				'grunt-contrib-connect': '~0.2.0',
-				'grunt-contrib-clean': '~0.4.0',
-				'grunt-contrib-livereload': '~0.1.2',
-				'grunt-bower-requirejs': '~0.4.1',
-				'grunt-regarde': '~0.1.1',
-				"grunt-karma": "~0.7.1",
-				"karma-coverage": "~0.1",
-				'grunt-open': '~0.2.0',
-				'matchdep': '~0.1.1',
-				'grunt-google-cdn': '~0.1.1',
-				'markdown': '~0.4.0',
-				'grunt-bump': '~0.0.11',
-    			'phantomjs' : '1.9.1-0'
-			}
-		});
-
 		// All done!
 		done();
 	});

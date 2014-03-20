@@ -12,6 +12,7 @@ module.exports = function (grunt) {
     var config = {
         name: '{%= name%}',
         src: 'src',
+        lib: 'lib',
         dist: 'dist',
         example:'examples'
     };
@@ -48,6 +49,7 @@ module.exports = function (grunt) {
                         return [
                             lrSnippet,
                             mountFolder(connect, '.tmp'),
+                            mountFolder(connect, config.lib),
                             mountFolder(connect, config.src),
                             mountFolder(connect, config.example)
                         ];

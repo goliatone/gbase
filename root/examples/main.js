@@ -2,8 +2,8 @@
 /* jshint strict: false */
 requirejs.config({
     paths: {
-        'jquery': '../lib/jquery/jquery',
-        '{%= name%}': '../src/{%= name%}'
+        'jquery': 'jquery/jquery',
+        '{%= name%}': '{%= name%}'
     }
 });
 

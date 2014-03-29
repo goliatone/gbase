@@ -11,7 +11,16 @@ Download the [production version][min] or the [development version][max].
 [max]: https://raw.github.com/{%= git_user %}/{%= git_repo %}/master/dist/{%= name %}.js
 
 ## Development
-`sudo npm install && bower install`
+`npm install && bower install`
+
+If you need to `sudo` the `npm` command, you can try to:
+
+```terminal
+sudo chown $(whoami) ~/.npm
+sudo chown $(whoami) /usr/local/share/npm/bin
+sudo chown -R $(whoami) /usr/local/lib/node_modules
+```
+
 
 If you bump versions, remember to update:
 - package.json

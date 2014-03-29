@@ -10,12 +10,12 @@
 (function (root, name, deps, factory) {
     "use strict";
     // Node
-     if(typeof deps === 'function') { 
+     if(typeof deps === 'function') {
         factory = deps;
         deps = [];
     }
-        
-    if (typeof exports === 'object') {        
+
+    if (typeof exports === 'object') {
         module.exports = factory.apply(root, deps.map(require));
     } else if (typeof define === 'function' && 'amd' in define) {
         //require js, here we assume the file is named as the lower
@@ -50,7 +50,7 @@
                     if (d.get) {
                         target.__defineGetter__(k, d.get);
                         if (d.set) target.__defineSetter__(k, d.set);
-                    } else if (target !== d.value) target[k] = d.value;                
+                    } else if (target !== d.value) target[k] = d.value;
                 });
             }
         }
@@ -58,46 +58,44 @@
     };
 
     /**
-     * Proxy method
-     * @param  {Function} fn      Function to be proxied
-     * @param  {Object}   context Context for the method.
+     * Shim console, make sure that if no console
+     * available calls do not generate errors.
+     * @return {Object} Console shim.
      */
-    var _proxy = function( fn, context ) {
-        var tmp, args, proxy, slice = Array.prototype.slice;
+    var _shimConsole = function(){
+        var empty = {},
+            con   = {},
+            noop  = function() {},
+            properties = 'memory'.split(','),
+            methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+                       'groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,' +
+                       'table,time,timeEnd,timeStamp,trace,warn').split(','),
+            prop,
+            method;
 
-        if ( typeof context === "string" ) {
-            tmp = fn[ context ];
-            context = fn;
-            fn = tmp;
-        }
+        while (method = methods.pop())    con[method] = noop;
+        while (prop   = properties.pop()) con[prop]   = empty;
 
-        if ( ! typeof(fn) === 'function') return undefined;
-
-        args = slice.call(arguments, 2);
-        proxy = function() {
-            return fn.apply( context || this, args.concat( slice.call( arguments ) ) );
-        };
-
-        return proxy;
+        return con;
     };
 
 
 ///////////////////////////////////////////////////
 // CONSTRUCTOR
 ///////////////////////////////////////////////////
-	
+
 	var options = {
-        
+
     };
-    
+
     /**
      * {%= title%} constructor
-     * 
+     *
      * @param  {object} config Configuration object.
      */
     var {%= title%} = function(config){
-        _extend(options, config || {});     
-        this.init();  
+        _extend(options, config || {});
+        this.init();
     };
 
 ///////////////////////////////////////////////////
@@ -108,5 +106,13 @@
         console.log('{%= title%}: Init!');
         return 'This is just a stub!';
     };
+
+    /**
+     * Logger method, meant to be implemented by
+     * mixin. As a placeholder, we use console if available
+     * or a shim if not present.
+     */
+    {%= title %}.prototype.logger = console || _shimConsole();
+
     return {%= title%};
 }));

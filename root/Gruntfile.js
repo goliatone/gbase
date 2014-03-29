@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 
     // configurable paths
     var config = {
-        name: '{%= name%}',
+        name: 'gl10n',
         src: 'src',
         lib: 'lib',
         dist: 'dist',
@@ -29,10 +29,10 @@ module.exports = function (grunt) {
         watch: {
             livereload: {
                 files: [
-                    '<%= config.src %>/{,*/}*.html',
-                    '{.tmp,<%= config.src %>}/styles/{,*/}*.css',
-                    '{.tmp,<%= config.src %>}/scripts/{,*/}*.js',
-                    '<%= config.src %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                    '<%= config.example %>/{,*/}*.html',
+                    '{.tmp,<%= config.example %>}/{,*/}*.css',
+                    '<%= config.example %>/{,*/}*.js',
+                    '{.tmp,<%= config.src %>}/{,*/}*.js'
                 ],
                 tasks: ['livereload']
             }

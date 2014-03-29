@@ -94,16 +94,30 @@
      * @param  {object} config Configuration object.
      */
     var {%= title%} = function(config){
-        _extend(options, config || {});
-        this.init();
+        config  = config || {};
+
+        _extend(config, {%= title%}.defaults || options);
+
+        this.init(config);
     };
+
+    /**
+     * Make default options available so we
+     * can override.
+     */
+    {%= title%}.defaults = options;
 
 ///////////////////////////////////////////////////
 // PRIVATE METHODS
 ///////////////////////////////////////////////////
 
-    {%= title%}.prototype.init = function(){
+    {%= title%}.prototype.init = function(config){
+        if(this.initialized) return this.logger.warn('Already initialized');
+        this.initialized = true;
+
         console.log('{%= title%}: Init!');
+        _extend(this, config);
+
         return 'This is just a stub!';
     };
 

@@ -96,7 +96,7 @@
     var {%= title%} = function(config){
         config  = config || {};
 
-        _extend(config, {%= title%}.defaults || options);
+        config = _extend({}, {%= title%}.defaults || options, config);
 
         this.init(config);
     };

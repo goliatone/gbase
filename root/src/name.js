@@ -59,22 +59,26 @@
      * available calls do not generate errors.
      * @return {Object} Console shim.
      */
-    var _shimConsole = function(){
+    var _shimConsole = function(con) {
+
+        if (con) return con;
+
+        con = {};
         var empty = {},
-            con   = {},
-            noop  = function() {},
+            noop = function() {},
             properties = 'memory'.split(','),
             methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
-                       'groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,' +
-                       'table,time,timeEnd,timeStamp,trace,warn').split(','),
+                'groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,' +
+                'table,time,timeEnd,timeStamp,trace,warn').split(','),
             prop,
             method;
 
-        while (method = methods.pop())    con[method] = noop;
-        while (prop   = properties.pop()) con[prop]   = empty;
+        while (method = methods.pop()) con[method] = noop;
+        while (prop = properties.pop()) con[prop] = empty;
 
         return con;
     };
+
 
 
 ///////////////////////////////////////////////////
@@ -93,16 +97,20 @@
     var {%= title%} = function(config){
         config  = config || {};
 
-        config = _extend({}, {%= title%}.defaults || options, config);
+        config = _extend({}, this.constructor.DEFAULS, config);
 
         this.init(config);
     };
+
+    {%= title%}.name = {%= title%}.prototype.name = '{%= title%}';
+
+    {%= title%}.VERSION = '0.0.0';
 
     /**
      * Make default options available so we
      * can override.
      */
-    {%= title%}.defaults = options;
+    {%= title%}.DEFAULTS = options;
 
 ///////////////////////////////////////////////////
 // PRIVATE METHODS
@@ -123,7 +131,14 @@
      * mixin. As a placeholder, we use console if available
      * or a shim if not present.
      */
-    {%= title %}.prototype.logger = console || _shimConsole();
+    {%= title %}.prototype.logger = _shimConsole(console);
+
+    /**
+     * PubSub emit method stub.
+     */
+    {%= title %}.prototype.emit = function() {
+        this.logger.warn({%= title %}, 'emit method is not implemented', arguments);
+    };
 
     return {%= title%};
 }));

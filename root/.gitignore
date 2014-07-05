@@ -44,6 +44,7 @@ Icon
 ### SublimeText
 
 # SublimeText project files
+*.sublime-project
 *.sublime-workspace
 
 
@@ -78,4 +79,7 @@ results
 
 npm-debug.log
 node_modules
+
+## Project crufts
+.coverage
 

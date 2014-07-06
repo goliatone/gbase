@@ -1,14 +1,22 @@
 {
-  "name": "{%= name %}",
-  "version": "{%= version %}",
-  "main": "./dist/{%= name %}.min.js",
-  "ignore": [
-    "**/.*"
-  ],
-  "dependencies": {
-    "jquery": "~2.0.3",
-    "requirejs": "~2.1.4",
-    "requirejs-text":"2.0.6",
-    "requirejs-domready":"2.0.1"
-  }
+    "name": "{%= name %}",
+    "version": "{%= version %}",
+    "main": "./dist/{%= name %}.min.js",
+    "ignore": [
+        "**/.*"
+    ],
+    "dependencies": {
+        "jquery": "~2.0.3",
+        "requirejs": "~2.1.4",
+        "requirejs-text": "2.0.6",
+        "requirejs-domready": "2.0.1"
+    },
+    "exportsOverride": {
+        "requirejs": {
+            "js": "require.js"
+        },
+        "gextend": {
+            "js": "src/extend.js"
+        }
+    }
 }

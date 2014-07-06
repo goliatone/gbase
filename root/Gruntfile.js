@@ -1,10 +1,10 @@
 'use strict';
 var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-var mountFolder = function (connect, dir) {
+var mountFolder = function(connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         src: 'src',
         lib: 'lib',
         dist: 'dist',
-        example:'examples'
+        example: 'examples'
     };
 
     try {
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         config: config,
-        livereload:{
+        livereload: {
             port: 35723
         },
         watch: {
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    middleware: function (connect) {
+                    middleware: function(connect) {
                         return [
                             lrSnippet,
                             mountFolder(connect, '.tmp'),
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
             },
             test: {
                 options: {
-                    middleware: function (connect) {
+                    middleware: function(connect) {
                         return [
                             mountFolder(connect, '.tmp'),
                             mountFolder(connect, 'test')
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                     }
                 }
             },
-            dev:{
+            dev: {
                 options: {}
             }
         },
@@ -143,6 +143,29 @@ module.exports = function (grunt) {
                     dest: '<%= config.dist %>',
                     src: []
                 }]
+            }
+        },
+        bower: {
+            install: {
+                options: {
+                    targetDir: './<%= config.lib %>',
+                    install: true,
+                    verbose: true,
+                    cleanTargetDir: false,
+                    cleanBowerDir: false,
+                    bowerOptions: {},
+                    layout: function(type, component) {
+                        console.warn(type, component);
+                        //grunt-bower-install wants to do component/type/file but
+                        //we need component/file
+                        var path = require('path');
+                        var renamedType = type;
+                        console.warn(path);
+                        console.warn(type);
+                        if (type === 'js') renamedType = '';
+                        return path.join(component, renamedType);
+                    }
+                }
             }
         },
         //https://github.com/vojtajina/grunt-bump

@@ -85,7 +85,7 @@
     var {%= title%} = function(config){
         config  = config || {};
 
-        config = _extend({}, this.constructor.DEFAULS, config);
+        config = _extend({}, this.constructor.DEFAULTS, config);
 
         this.init(config);
     };

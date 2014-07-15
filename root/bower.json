@@ -14,6 +14,9 @@
         "requirejs-domready": "2.0.1"
     },
     "exportsOverride": {
+        "jquery": {
+            "js": "jquery.js"
+        },
         "requirejs": {
             "js": "require.js"
         },

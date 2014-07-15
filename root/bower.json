@@ -7,6 +7,8 @@
     ],
     "dependencies": {
         "jquery": "~2.0.3",
+        "gextend": "latest",
+        "gkeypath": "latest",
         "requirejs": "~2.1.4",
         "requirejs-text": "2.0.6",
         "requirejs-domready": "2.0.1"
@@ -17,6 +19,9 @@
         },
         "gextend": {
             "js": "src/extend.js"
+        },
+        "gkeypath": {
+            "js": "src/keypath.js"
         }
     }
 }

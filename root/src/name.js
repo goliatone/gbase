@@ -83,8 +83,6 @@
      * @param  {object} config Configuration object.
      */
     var {%= title%} = function(config){
-        config  = config || {};
-
         config = _extend({}, this.constructor.DEFAULTS, config);
 
         if(config.autoinitialize) this.init(config);

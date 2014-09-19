@@ -74,7 +74,7 @@
 ///////////////////////////////////////////////////
 
 	var options = {
-
+        autoinitialize:true
     };
 
     /**
@@ -87,7 +87,7 @@
 
         config = _extend({}, this.constructor.DEFAULTS, config);
 
-        this.init(config);
+        if(config.autoinitialize) this.init(config);
     };
 
     {%= title%}.name = {%= title%}.prototype.name = '{%= title%}';

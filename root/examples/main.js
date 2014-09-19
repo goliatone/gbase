@@ -3,6 +3,7 @@
 requirejs.config({
     paths: {
         'jquery': 'jquery/jquery',
+        'extend': 'gextend/extend',
         '{%= name%}': '{%= name%}'
     }
 });

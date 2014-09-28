@@ -1,4 +1,4 @@
-/*global define:true, describe:true , it:true , expect:true, 
+/*global define:true, describe:true , it:true , expect:true,
 beforeEach:true, sinon:true, spyOn:true , expect:true */
 /* jshint strict: false */
 define(['{%= name%}', 'jquery'], function({%= title%}, $) {
@@ -12,12 +12,10 @@ define(['{%= name%}', 'jquery'], function({%= title%}, $) {
         });
 
         it('{%= title%} should initialize', function() {
-            var {%= name%} = new {%= title%}();
+            var {%= name%} = new {%= title%}({autoinitialize:false});
             var output   = {%= name%}.init();
             var expected = 'This is just a stub!';
             expect(output).toEqual(expected);
         });
-        
     });
-
 });

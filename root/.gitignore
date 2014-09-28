@@ -83,3 +83,4 @@ node_modules
 ## Project crufts
 .coverage
 .lib
+lib

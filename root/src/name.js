@@ -73,7 +73,7 @@
 // CONSTRUCTOR
 ///////////////////////////////////////////////////
 
-	var options = {
+	var OPTIONS = {
         autoinitialize:true
     };
 
@@ -96,7 +96,7 @@
      * Make default options available so we
      * can override.
      */
-    {%= title%}.DEFAULTS = options;
+    {%= title%}.DEFAULTS = OPTIONS;
 
 ///////////////////////////////////////////////////
 // PRIVATE METHODS

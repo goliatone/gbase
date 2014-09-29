@@ -11,5 +11,4 @@ requirejs.config({
 define(['{%= name%}', 'jquery'], function ({%= title%}, $) {
     console.log('Loading');
 	var {%= name%} = new {%= title%}();
-	{%= name%}.init();
 });

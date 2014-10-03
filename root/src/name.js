@@ -96,7 +96,7 @@
      * Make default options available so we
      * can override.
      */
-    {%= title%}.DEFAULTS = OPTIONS;
+    {%= title%}.DEFAULTS =  _extend({}, OPTIONS);
 
 ///////////////////////////////////////////////////
 // PRIVATE METHODS

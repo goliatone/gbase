@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
     // configurable paths
     var config = {
-        name: 'gl10n',
+        name: '{%= name%}',
         src: 'src',
         lib: 'lib',
         dist: 'dist',

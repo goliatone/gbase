@@ -6,7 +6,7 @@
     },
     "scripts": {
         "test": "grunt karma:ci",
-        "postinstall": "node node_modules/bower/bin/bower install"
+        "postinstall": "node node_modules/.bin/bower install && node_modules/.bin/grunt bower"
     },
     "repository": {
         "type": "git",
@@ -28,7 +28,7 @@
         "grunt-contrib-clean": "~0.4.0",
         "grunt-contrib-livereload": "~0.1.2",
         "grunt-contrib-compass": "~0.7.0",
-        "grunt-bower-requirejs": "~0.4.1",
+        "grunt-bower-requirejs": "~2.0.0",
         "grunt-regarde": "~0.1.1",
         "grunt-karma": "~0.7.1",
         "karma-coverage": "~0.1.4",
